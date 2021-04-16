@@ -18,6 +18,7 @@ git commit -m "커밋 메시지"
 
 git branch :branch확인
 git branch 브랜치이름 :branch만들기
+git branch -a: 현재 어떤 branch인지
 git checkout 브랜치이름 :branch이동
 git checkout -b 브랜치이름 :branch만들고 checkout
 git commit -a :변경된 파일 모두 commit
@@ -25,3 +26,22 @@ git commit -a :변경된 파일 모두 commit
 (다른 branch에서 파일 수정)
 git checkout master
 git merge 브랜치이름 :현재 작업중인 브랜치에 브랜치이름을 가져와 병합
+
+git clone: github를 로컬git으로 가져오기
+mkdir folder
+cd folder
+git clone https://github.com/user/name.git
+
+git remote: 로컬git과 github 연결
+git remote add 저장소별칭 https://github.com/user/name.git
+git remote -v :github연결 확인
+
+git push: 로컬수정을 github로
+git push 저장소별칭 local_branch
+git push 저장소별칭 --all: github로 local모든 branch
+
+git fetch, git pull: github와 local 간격 메꾸기
+git fetch: github 커밋정보를 로컬git으로 가져옴
+git merge 저장소별칭/branch: 현재 로컬 작업branch와 github branch와 병합
+git diff 저장소별칭/branch: 차이 보여줌
+git pull 저장소별칭 branch: 현재 로컬 작업branch와 github branch와 병합
