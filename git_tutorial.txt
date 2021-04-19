@@ -15,6 +15,7 @@ git status  :저장소 상태 확인
 git add 파일명
 git commit
 git commit -m "커밋 메시지"
+git reset HEAD [파일명] :add 
 
 git branch :branch확인
 git branch 브랜치이름 :branch만들기
