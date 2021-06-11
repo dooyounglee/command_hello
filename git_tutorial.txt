@@ -46,3 +46,4 @@ git fetch: github 커밋정보를 로컬git으로 가져옴
 git merge 저장소별칭/branch: 현재 로컬 작업branch와 github branch와 병합
 git diff 저장소별칭/branch: 차이 보여줌
 git pull 저장소별칭 branch: 현재 로컬 작업branch와 github branch와 병합
+git restore 파일명: github내용으로 local을 강제 덮어쓰기
