@@ -1,0 +1,14 @@
+git status
+  On branch master: 현재 master 브랜치
+  No commits yet: 아직 커밋한 파일이 없다.
+  nothing to commit: 현재 커밋할 파일이 없다.
+  untracked files: 아직 한번도 버전 관리하지 않은 파일
+  Changes to be committed: 커밋할꺼다.
+  nothing to commit, working tree clean: 버전으로 만들 파일이 없고, 작업트리도 수정사항없이 깨끗하다.
+  Changes not staged for commit: 아직 스테이징 상태가 아니다.
+
+git log: 방금 커밋한 버전에 대한 설명
+  (HEAD -> master): 이 버전이 가장 최신
+git commit -am "message": 전에 커밋한 적이 있는 파일을 스테이징,커밋 한번에 할때.
+
+git diff: 파일 비교
