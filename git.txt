@@ -9,6 +9,33 @@ git status
 
 git log: 방금 커밋한 버전에 대한 설명
   (HEAD -> master): 이 버전이 가장 최신
+git log --stat: 커밋에 관련된 파일까지 함께(너무 많으면 한 화면씩 나누어 Enter누르면 다음 화면, Q누르면 끝)
+
 git commit -am "message": 전에 커밋한 적이 있는 파일을 스테이징,커밋 한번에 할때.
+git commit --amend: 가장 최근 커밋 메시지 수정.
+  vim편집기 실행 되고 원래 message가 뜸. i or a 눌러서 수정하고 ex모드 돌아가서 vim편집기 종료하면 이전 커밋에 더해짐.
 
 git diff: 파일 비교
+
+git checkout -- hello.txt: hello.txt수정 후(changes not staged, modified) 이걸 날리면 수정 전으로 바뀜.
+
+git reset HEAD hello2.txt: hello2.txt 수정 후, add 후(changes to be commited, modified) 이걸 날리면 unstaged로 바뀜(changes not stated, modified)
+git reset HEAD^: 커밋 후 이걸 날리면 커밋 취소, 스테이지에서 내려옴, 
+  HEAD^: 현재 HEAD가 가리키는 브랜치의 최신 커밋.
+  unstaged changes after reset: 라는 메시지 뜸. 기록에 남음.
+git reset HEAD~3: 최근 3개 커밋 취소
+git reset --soft HEAD^: 최근 커밋을 하기 전 상태로 작업 트리를 되돌림.
+git reset --mixed HEAD^: 최근 커밋과 스테이징을 하기 전 상태로 작업 트리를 되돌림. git reset과 동일.
+git reset --hard HEAD^: 최근 커밋, 스테이징, 파일 수정 하기 전 상태로 작업 트리를 되돌림. 복구 불가.
+git reset --hard 커밋해시: 커밋해시 이후 커밋을 삭제하고 커밋해시로 이동.
+  HEAD is now at 커밋해시앞부분 커밋메시지: 라는 메시지 뜸.
+
+git revert 커밋해시: 커밋해시를 이전 커밋으로 되돌림.
+  vim편집기 실행되고 i or a 눌러서 커밋 메시지 입력할 수 있음.
+  This reverts commit 커밋해시: 라는 메시지 뜸.
+  커밋해시 이후에 revert했다는 새로운 커밋이 생김.
+
+.gitignore파일
+  mynote.txt
+  temp/
+  .swp
