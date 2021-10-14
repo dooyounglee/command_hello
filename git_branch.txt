@@ -12,6 +12,15 @@ git branch -d o2: o2 branch 삭제
 git branch -D 병합안한branch: 강제 삭제.(그냥 삭제 하면 오류뜸.)
   삭제한 branch이름으로 다시 만들면 예전에 작업했던 내용 나옴.
 
+git reset master커밋해시: sub branch에서 master branch 커밋해시로 reset날리면 master커밋해시를 가리키고, sub branch의 이전 커밋은 끊김.
+
+git stash: git stash save: 커밋하지 않은 수정 파일을 저장
+  git status 날려보면 nothing to commit, working tree clean뜸.
+git stash list: stash 리스트 확인
+git stash pop: 가장 최근에 stash한 파일들이 modified됌.
+git stash apply: git stash pop + list는 안변함.
+git stash drop: stash 리스트에서 최근꺼 삭제.
+
 (HEAD -> master, apple): 현재 작업중인 branch는 master, 최신 커밋은 master, apple 같음.
 CONFLICT (content): Merge conflict in work.txt: Merge하는 동안 충돌
 
