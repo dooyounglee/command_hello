@@ -1,0 +1,23 @@
+git branch: 현재 branch확인
+git branch apple: apple branch만들기
+
+git checkout apple: apple branch로 이동 "apple 브랜치로 체크아웃한다"
+
+git merge o2: 현재 master branch일때 저걸 날리면 vim실행, "Merge branch o2"라는 커밋 메시지 나타남. 수정가능.
+git merge o2 --no-edit: vim실행 안되고 기본 메시지 사용.
+git merge o2 --edit:
+  충돌파일 외에는 병합 됨
+
+git branch -d o2: o2 branch 삭제
+git branch -D 병합안한branch: 강제 삭제.(그냥 삭제 하면 오류뜸.)
+  삭제한 branch이름으로 다시 만들면 예전에 작업했던 내용 나옴.
+
+(HEAD -> master, apple): 현재 작업중인 branch는 master, 최신 커밋은 master, apple 같음.
+CONFLICT (content): Merge conflict in work.txt: Merge하는 동안 충돌
+
+<<<<<<<<<HEAD
+master내용
+===========
+o2내용
+>>>>>>>>>>o2
+에서 <<<<<<HEAD지우고, >>>>>>>>o2도 지우고 맞게 수정한 후 vim종료, 커밋.
