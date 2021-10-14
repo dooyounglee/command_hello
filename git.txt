@@ -1,3 +1,6 @@
+git init: 현재 위치를 깃 저장소로 만듬
+git init 폴더명: 현재 위치에 폴더를 만들고 그 폴더를 깃 저장소로 만듬
+
 git status
   On branch master: 현재 master 브랜치
   No commits yet: 아직 커밋한 파일이 없다.
@@ -10,6 +13,13 @@ git status
 git log: 방금 커밋한 버전에 대한 설명
   (HEAD -> master): 이 버전이 가장 최신
 git log --stat: 커밋에 관련된 파일까지 함께(너무 많으면 한 화면씩 나누어 Enter누르면 다음 화면, Q누르면 끝)
+git log --oneline: 한줄에 한커밋씩
+git log --branches: 각 branch의 커밋을 함께
+git log --graph: branch와 커밋의 관계를 그래프로
+git log master..apple: master branch를 기준으로 apple branch와 비교. master엔 없고 apple에만 있는 커밋 보여줌
+
+git add hello.txt: 스테이지로 이동
+git add .: 수정된 파일을 한꺼번에 스테이지로 이동
 
 git commit -am "message": 전에 커밋한 적이 있는 파일을 스테이징,커밋 한번에 할때.
 git commit --amend: 가장 최근 커밋 메시지 수정.
