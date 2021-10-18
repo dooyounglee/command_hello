@@ -1,0 +1,14 @@
+1. github에 repository만들기
+
+1. local repository로 만들 폴더를 만들고 폴더로 이동
+2. git init 폴더명
+3. cd 폴더명
+4. vim f1.txt(파일을 만들었다 or 수정했다)
+5. git add f1.txt
+6. git commit -m "메시지"
+7. git log
+
+8. git remote add origin 주소복사: github repository에 origin을 추가하겠다고 git에게 알려주는 것
+  origin=주소복사. github 주소가 너무 기니까 origin이라는 별칭
+  git에서 기본 branch를 master라 듯이, github repository를 origin
+9. git remote -v: 확인.
