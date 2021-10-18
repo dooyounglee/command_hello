@@ -1,14 +1,54 @@
 1. github에 repository만들기
 
-1. local repository로 만들 폴더를 만들고 폴더로 이동
-2. git init 폴더명
-3. cd 폴더명
-4. vim f1.txt(파일을 만들었다 or 수정했다)
-5. git add f1.txt
-6. git commit -m "메시지"
-7. git log
+2. local repository로 만들 폴더를 만들고 폴더로 이동
+3. git init 폴더명
+4. cd 폴더명
+5. vim f1.txt(파일을 만들었다 or 수정했다)
+6. git add f1.txt
+7. git commit -m "메시지"
+8. git log
 
-8. git remote add origin 주소복사: github repository에 origin을 추가하겠다고 git에게 알려주는 것
+9. git remote add origin 주소복사: github repository에 origin을 추가하겠다고 git에게 알려주는 것
   origin=주소복사. github 주소가 너무 기니까 origin이라는 별칭
   git에서 기본 branch를 master라 듯이, github repository를 origin
-9. git remote -v: 확인.
+10. git remote -v: 확인.
+
+11. git push -u origin master: git HEAD가 가리키는 branch를 origin(github repository)의 master branch로 푸시.
+  -u: 처음 한번만
+
+12. vim f1.txt(수정했다)
+13. git commit -am "메시지"
+14. git push
+
+15. github에서 직접 commit
+
+16. git pull origin master
+--------------------------------
+github는 아이디,비번으로 계정 인증을 하는데,
+SSH(Secure SHell)원격 접속은 해당 기기를 github에 인증.(아이디,비번 필요x). 해당 기기를 github에 등록해야 함.
+
+SSH키 생성
+1. cd ~
+2. ssh-keygen
+  SSH키가 저장되는 디렉터리 표시. 파일이름 입력하라고 뜸. 파일이름 입력하지 말고 Enter
+3. 두번 더 Enter
+4. SSH를 통해서 다른 컴퓨터에 접속할 수 있는 비밀번호 뜸.
+5. ~/.ssh에 ls쳐보면 두 파일 확인
+  id_rsa파일: private key
+  id_rsa.pub: public key
+
+1. cat id_rsa.pub
+2. ssh-rsa부터 끝까지 복사
+3. github 로그인
+4. setting
+5. SSH and GPG keys
+6. New SSH key
+7. title 적고, key에 붙여넣기
+8. Add SSH Key
+
+9. github repository 만들기
+10. SSH주소 복사
+11. git에서 cd ~
+12. git init 폴더명
+13. cd 폴더명
+14. git remote add origin 주소 
