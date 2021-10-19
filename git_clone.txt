@@ -1,0 +1,68 @@
+1. github에서 Clone or download누르고 Clone with HTTPS에 저장소 주소 복사
+2. git clone 복사한주소 git_home: git_home이라는 폴더명으로 local repository만듬. git_home이라는 폴더명이 없으면 자동으로 만들어짐.
+  git clone 복사한주소 .: 현재 디렉터리에 복사.
+3. git clone 복사한주소 git_office
+4. cd git_home
+5. git log
+6. cd..
+7. cd git_office
+8. git log
+9. git_home, git_office에서 git remote -v 날려서 연결 확인
+
+cd ~/git_home
+vim f1.txt(수정했따)
+git commit -am "메시지"
+git push
+
+git ~/git_office
+git pull
+vim f1.txt(수정했다)
+git commit -a, "메시지"
+git push
+
+cd ~/git_home
+git pull
+git log
+------------------
+cd ~/git_home
+git log --oneLine
+  HEAD -> master, origin/master, origin/HEAD
+    HEAD -> master: 이 commit이 local repository의 최종 commit
+    origin/master: 원격 저장소의 최종commit
+vim f3.txt(만들었다)
+git add f3.txt
+git commit -m "메시지"
+git log --oneline
+  HEAD -> master는 f3.txt commit을,
+  origin/master, origin/HEAD는 직전(f1.txt 수정)을 가리킨다.
+git status
+  Your branch is ahead of 'origin/master' by 1 commit: 현재 master branch가 origin의 master branch보다 1 commit 앞섰다.
+git push
+git log --oneline
+  (HEAD -> master, origin/master, origin/HEAD) f3.txt commit
+
+git cd ~/git_office
+git fetch (날리면 뭔가 가져옴)
+ls -al (날리면 f3.txt안보임)
+git log --oneline
+  HEAD -> master만 보이고 origin/master는 안보임. 원격 저장소의 최신 commit가져왔지만 아직 합쳐지지 않음.
+git status
+  Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded
+(git diff HEAD origin/master: 지역 저장소의 최신 커밋 vs fetch한 커밋 차이 비교)
+git checkout FETCH_HEAD
+git log
+  최신 commit에 origin/master, origin/HEAD 표시
+  이걸 보고 합칠지 말지
+git checkout master
+git pull or git merge FETCH_HEAD
+git log --oneline
+
+
+
+git fetch vs git pull
+pull: 원격 저장소의 커밋을 가져와서 무조건 지역 저장소와 합침
+fetch: 원격 브랜치에 어떤 변화가 있는지 그 정보만 가져옴
+
+origin에 여러 branch가 있을 경우
+git fetch
+git merge origin/master, git merge origin/branch1,....을 한번에 하려면 git merge FETCH_HEAD
