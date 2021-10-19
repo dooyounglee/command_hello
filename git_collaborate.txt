@@ -1,0 +1,51 @@
+팀장이 github repository만듬
+팀장이 팀원 초대
+팀원 초대 수락
+
+팀장, 팀원 모두
+git init manuals
+cd manuals
+git config user.name 사용자이름
+git config user.email 메일주소
+
+팀장이
+vim overview.txt
+git add overview.txt
+git commit -m "메시지"
+git remote add origin 주소
+git push -u origin master
+
+
+팀원이
+git clone 주소
+
+팀장이
+vim overview.txt
+git commit -am "메시지"
+
+그동안 팀원이
+vim apple.txt
+git add apple.txt
+git commit -m "메시지"
+git push -u origin master
+  rejected
+git pull
+  vim실행 Merge 명령에 대한 메시지 입력 후 vim 종료
+다시 git push -u origin master
+------------------------
+팀장이
+git pull (다른 팀원이 커밋, 푸시 한게 있나)
+git checkout -b f
+  -b: branch 만들고 checkout. 이미 있으면 checkout만.
+vim f1.txt
+git add f1.txt
+git commit -m "메시지"
+git push origin f
+
+github에서 New pull request 클릭
+메시지 작성 후 Create pull request
+
+누구든
+Pull requests탭
+Pull request 누르고 Merge pull request
+commit 메시지 입력 후 Confirm merge
